@@ -1,0 +1,155 @@
+body {
+	margin-top: 2em;	
+}
+.github-icon {
+	height: 160px;
+}
+.arrow {
+	height: 110px;
+	margin-bottom: 25px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+.changelog-icon {
+	height: 150px;
+	margin-bottom: 10px;
+}
+.title {
+	word-spacing: 0.4em;
+	font-size: 2em;
+	font-weight: bold;	
+}
+.repo {
+	margin-top: 3.5em;
+	width: 800px;
+	border: 1px solid gray;
+	height: 50px; 
+	border-radius: 10px;
+}
+.repo-text {
+	margin-top: 6px;
+	font-size: 30px;
+	border: none;
+	width: 780px;
+	outline: none;
+}
+.auto-hint {
+	color: gray;
+}
+.software-name {
+	margin-top: 0.5em;
+	width: 500px;
+	font-size: 34px;
+	color: #333;
+}
+.text-span {
+	border: 1px solid gray;
+	height: 36px; 
+	border-radius: 10px;
+}
+.software-text {
+	width: 200px;
+	border: none;
+	outline: none;
+	font-size: 26px;
+	padding-bottom: 6px;
+	margin-left: 3px;
+	margin-right: 3px;
+	background: none;
+}
+.debian-bits {
+	margin-top: 0.5em;
+	width: 800px;
+	font-size: 24px;
+	color: #333;
+}
+.distribution {
+	width: 400px;
+	display: inline;
+}
+.urgency {
+	margin-left: 20px;
+	width: 400px;
+	display: inline;
+}
+.distribution-text {
+	width: 200px;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	margin: 5px;
+}
+.urgency-select {
+	width: 200px;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	margin: 5px;
+	background: none;
+}
+.submit {
+	margin-top: 1.5em;
+	position: relative;
+	width: 200px;
+	height: 40px;
+	background-color: #00e3e3;
+	border: 2px blue solid;
+	border-radius: 10px;
+	border-image: initial;
+}
+.submit-button {
+	width: 190px;
+	height: 40px;
+	margin-top: 2px;
+	border: 0;
+	background: transparent;
+	background-color: transparent;
+	color: black;
+	font-size: 24px;
+	border-image: initial;
+	cursor: pointer;
+}
+.footer {
+	position: absolute;
+	bottom: 0px;
+	width: 98%;
+	margin: 6px;
+	font-family: sans;
+	font-size: 0.7em;
+}
+.feedback {
+	display: inline;
+	float: left;
+}
+.copyright {
+	display: inline: 
+	float: right;
+}
+.help {
+	position: absolute;
+	right: 15%;
+	cursor: pointer;
+}
+.overlay {
+	background-color: #000;
+	opacity: .7;
+	filter: alpha(opacity=70);
+	position: absolute; top: 0; left: 0;
+	width: 100%; height: 100%;
+        z-index: 10;
+}
+.helpdiv {
+  position: fixed;
+  z-index: 11;
+  left: 50%;
+  top: 50px;
+  width: 640px;
+  margin-left: -320px;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: white;
+}
+.helppop {
+	margin: 1em;
+	
+}
