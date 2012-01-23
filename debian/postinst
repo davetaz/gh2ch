@@ -1,0 +1,39 @@
+#!/bin/sh
+# postinst script for gh2ch
+
+set -e
+
+case "$1" in
+	configure)
+		a2ensite gh2ch
+		/etc/init.d/apache2 reload
+		DOMAIN=`hostname -d`
+		MACHINE=`hostname`
+		echo '########################################################';
+		echo '##                                                    ##';
+		echo '##                 GitHub to ChangeLog                ##';
+		echo '##                                                    ##';
+		echo '########################################################';
+		echo '##                                                    ##';
+		echo '## Installed Successfully                             ##';
+		echo '##                                                    ##';
+		echo '## You can access the site at the following location: ##';
+		echo '##                                                    ##';
+		echo "## http://$MACHINE.$DOMAIN/gh2ch ##";
+		echo '##                                                    ##';
+		echo '##       Regards.                                     ##';
+		echo '##              The gh2ch team.                       ##';
+		echo '##                                                    ##';
+		echo '########################################################';
+	;;
+	
+	abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1;
+	;;
+esac
+
+exit 0

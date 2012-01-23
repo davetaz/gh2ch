@@ -6,4 +6,9 @@ configure:
 
 install:
 	mkdir -p $(DESTDIR) 2>/dev/null
-	cp -r * $(DESTDIR);
+	cp *.php $(DESTDIR) 2>/dev/null
+	cp README $(DESTDIR) 2>/dev/null
+	cp -r img $(DESTDIR) 2>/dev/null
+	cp -r js $(DESTDIR) 2>/dev/null
+	cp -r css $(DESTDIR) 2>/dev/null
+	cp gh2ch /etc/apache2/sites-available

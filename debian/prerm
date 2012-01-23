@@ -1,0 +1,22 @@
+#!/bin/sh
+# prerm script for gh2ch
+
+set -e
+
+case "$1" in
+	remove|deconfigure) 
+		a2dissite gh2ch > /dev/null >&2
+		/etc/init.d/apache2 reload
+	;;
+	
+	upgrade|failed-upgrade)
+	;;
+
+	*)
+		echo "prerm called with unknown argument \`$1'" >&2
+		exit 1
+	;;
+
+esac
+
+exit 0

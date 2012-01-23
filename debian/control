@@ -1,0 +1,11 @@
+Source: gh2ch
+Section: web
+Priority: extra
+Maintainer: David Tarrant <davetaz@ecs.soton.ac.uk>
+Build-Depends: 
+Standards-Version: 3.7.2
+
+Package: gh2ch
+Architecture: all
+Depends: libapache2-mod-php5
+Description: Web service to generate a Debian Changelog from GitHub commit comments. 

@@ -1,0 +1,6 @@
+* Get the latest changelog by using the package on itself! 
+
+On Debian
+=========
+
+* git-buildpackage 

@@ -78,6 +78,7 @@ body {
 	outline: none;
 	font-size: 20px;
 	margin: 5px;
+	background: none;
 }
 .urgency-select {
 	width: 200px;
