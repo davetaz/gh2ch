@@ -11,4 +11,4 @@ install:
 	cp -r img $(DESTDIR) 2>/dev/null
 	cp -r js $(DESTDIR) 2>/dev/null
 	cp -r css $(DESTDIR) 2>/dev/null
-	cp gh2ch /etc/apache2/sites-available
+	cp gh2ch $(APACHESITES) 2>/dev/null
