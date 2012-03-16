@@ -145,11 +145,17 @@ function process_github_changes($software_name,$base_json_url,$distribution,$urg
 		    $line = trim($line);
 		    if ($line != "") {
 			if (substr(trim($line),0,2) != "* ") { 
-				$message .= "  * " . $line . "\n";
+				$message .= "  * " . wordwrap($line,80,"\n  ",true) . "\n";
 			} else {
-				$message .= "  " . trim($line) . "\n"; 
+				$message .= "  " . wordwrap(trim($line),80,"\n  ",true) . "\n"; 
 			}
-			$items[$author][] = $message;
+			$out_msg = explode("  * ", $message);
+			for ($k=1;$k<count($out_msg);$k++) {
+				$message = "  * " . $out_msg[$k];
+				if (!@in_array($message,$items[$author])) {
+					$items[$author][] = $message;
+				} 
+			}
 		    }
 		}
 	}
