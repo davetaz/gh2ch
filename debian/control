@@ -8,4 +8,7 @@ Standards-Version: 3.7.2
 Package: gh2ch
 Architecture: all
 Depends: libapache2-mod-php5
-Description: Web service to generate a Debian Changelog from GitHub commit comments. 
+Description: Web service to generate a Debian Changelog from GitHub commit messages
+  Takes a github repository and generates a changelog based on the tags.
+  The changelog is split both by tag name/version and by author exactly like
+  a standard Debian changelog. 
