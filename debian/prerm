@@ -6,7 +6,7 @@ set -e
 case "$1" in
 	remove|deconfigure) 
 		a2dissite gh2ch > /dev/null >&2
-		/etc/init.d/apache2 reload
+		invoke-rc.d apache2 reload		
 	;;
 	
 	upgrade|failed-upgrade)

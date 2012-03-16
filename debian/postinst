@@ -6,7 +6,7 @@ set -e
 case "$1" in
 	configure)
 		a2ensite gh2ch
-		/etc/init.d/apache2 reload
+		invoke-rc.d apache2 reload		
 		DOMAIN=`hostname -d`
 		MACHINE=`hostname`
 		echo '########################################################';
