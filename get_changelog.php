@@ -74,7 +74,7 @@ function process_github_changes($software_name,$base_json_url,$distribution,$urg
 			$last_sha = $commits[$i]["sha"];
 		}
 	}
-	
+
     $json_string = null;
     $url = $base_json_url . "/tags?per_page=100";
     $handle = fopen($url,"r");
@@ -134,22 +134,34 @@ function process_github_changes($software_name,$base_json_url,$distribution,$urg
 			$date = date("r",$time);
 			$tag_author = " -- " . $commits[$pos]["name"] . " <" . $commits[$pos]["email"] .">  " . $date . "\n";
 		}
+	}
+	$items = "";
+	for ($j=count($commits);$j>0;$j--) {
+		$pos = $j-1;
+		$message = "";
+		$author = "[".$commits[$pos]["name"] . " <" . $commits[$pos]["email"] . ">]";
 		$messages = $commits[$pos]["message"];
 		foreach(preg_split("/(\r?\n)/", $messages) as $line){
 		    $line = trim($line);
 		    if ($line != "") {
-			$messages_out .= "  * " . $line . "\n";
+			if (substr(trim($line),0,2) != "* ") { 
+				$message .= "  * " . $line . "\n";
+			} else {
+				$message .= "  " . trim($line) . "\n"; 
+			}
+			$items[$author][] = $message;
 		    }
 		}
 	}
-	$author["[".$commits[$pos]["name"] . " <" . $commits[$pos]["email"] . ">]"] = $messages_out; 
-    	$ret .= $version_string;
+	$ret .= $version_string;
 	$ret .= "\n";
-	foreach($author as $name => $messages) {
-		$ret .= "  " . $name . "\n";
-		$ret .= $author[$name];
+	foreach($items as $author => $messages) {
+		$ret .= "  " . $author . "\n";
+		for($j=0;$j<count($messages);$j++) {
+			$ret .= $messages[$j];
+		}
+		$ret .= "\n";
 	}
-	$ret .= "\n"; 
 	$ret .= $tag_author;
 	$ret .= "\n";
     }
